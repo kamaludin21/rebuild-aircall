@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Aircall Remake</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+</head>
+
+<body>
+    <!-- lg:flex justify-end -->
+    <div class="hidden lg:flex justify-between items-center lg:px-10 xl:px-32 border-b-2">
+        <div class="">
+            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                <input type="checkbox" name="toggle" id="toggle"
+                    class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                <label for="toggle"
+                    class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+            </div>
+            <label for="toggle" class="text-xs text-gray-700">Dark Mode</label>
+        </div>
+        <div class="flex">
+            <div class="my-1 mr-1">
+                <a href="#"
+                    class="inline-block align-text-bottom py-2 text-base font-semibold tracking-tight hover:text-green-400">Contact
+                    Us</a>
+            </div>
+            <div class="my-1 mx-2">
+                <button type="button"
+                    class="border rounded border-gray-400 text-green-500 font-semibold tracking-tight text-base py-1.5 px-4 bg-white hover:border-green-400">Login</button>
+            </div>
+            <div class="inline-block my-1">
+                <button type="button"
+                    class="dropdown border rounded border-gray-400 text-gray-900 font-semibold tracking-tight text-base py-1.5 px-2 bg-white flex"
+                    id="dropdown">EN
+                    <span>
+                        <svg class="fill-current h-4 w-4 mt-1.5" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="rounded right-10 xl:right-32 w-32 mt-1 bg-white shadow-lg hidden" id="dropdown-menu">
+                    <div id="languages">
+                        <template v-for="item in items">
+                            <a
+                                class="block px-2 py-1 text-gray-800 hover:bg-green-50 text-lg font-semibold cursor-pointer">{{ item.language }}</a>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="flex flex-col lg:flex-row bg-grey-600 lg:mx-10 xl:mx-32 py-5">
+        <div class="flex items-center justify-between px-2 lg:px-0">
+            <!-- brand -->
+            <div class="lg:mr-12">
+                <a href="">
+                    <img class="h-8 lg:h-16" src="./images/aircall-logo.svg" alt="">
+                </a>
+            </div>
+            <!-- burger -->
+            <div class="flex items-center lg:hidden">
+                MENU
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Navigations -->
+        <div class="hidden lg:flex flex-col lg:flex-row justify-between w-full">
+            <div class="flex flex-col lg:flex-row">
+                <a href="#" class="flex items-center py-4 px-2 lg:px-4 lg:py-0 font-semibold">Why aircall
+                    <span class="ml-2 mt-1">
+                        <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="flex items-center py-4 px-2 lg:py-0 font-semibold">Solutions
+                    <span class="ml-2 mt-1">
+                        <svg class="w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="flex items-center py-4 px-2 lg:py-0 font-semibold">Pricing</a>
+                <a href="#" class="flex items-center py-4 px-2 lg:py-0 font-semibold">Resources
+                    <span class="ml-2 mt-1">
+                        <svg class="w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="flex items-center py-4 px-2 lg:py-0 font-semibold">Partners
+                    <span class="ml-2 mt-1">
+                        <svg class="w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="flex items-center py-4 px-2 lg:py-0 font-semibold">Company
+                    <span class="ml-2 mt-1">
+                        <svg class="w-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <div class="flex flex-col lg:flex-row px-2 lg:px-0">
+                <button class="bg-green-600 hover:bg-green-700 my-2 px-3 rounded text-white font-semibold">Try for
+                    free</button>
+            </div>
+        </div>
+    </nav>
+    <section class="lg:mx-10 xl:mx-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="lg:mt-10">
+                <h1 class="font-semibold text text-5xl">
+                    The phone system for modern business
+                </h1>
+                <p class="my-10 text-xl font-normal text-gray-900">
+                    Simple to set up. Easy to use. Cloud-based call center software connected to your tools.
+                </p>
+                <div class="flex flex-wrap">
+                    <button class="bg-green-600 hover:bg-green-700 py-3 px-5 mr-3 rounded text-white font-semibold">Try
+                        for free</button>
+                    <button
+                        class="border rounded border-gray-400 text-green-500 font-semibold tracking-tight text-base py-3 px-5 bg-white hover:border-green-400">Get
+                        a live demo</button>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <img src="./images/hero_1_2.jpg" class=" object-cover object-center" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- Company -->
+    <section>
+        <div class="grid grid-cols-1 justify-items-center p-5">
+            <p class="text-xs text-gray-400 tracking-wider mb-2">TRUSTED BY 7,000+ COMPANIES</p>
+            <div class="flex flex-wrap gap-4 justify-center my-5">
+                <img src="./images/Untuckit.svg" class="h-9" alt="">
+                <img src="./images/Birdies_1.svg" class="h-9" alt="">
+                <img src="./images/Expensify.svg" class="h-9" alt="">
+                <img src="./images/Pipedrive.svg" class="h-9" alt="">
+                <img src="./images/Avocado.svg" class="h-9" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="lg:mx-10 xl:mx-32 mt-16 py-16">
+        <div class="flex flex-wrap justify-center mb-14">
+            <p class="xl:text-4xl tracking-normal font-semibold">Get your cloud-based phone system up and running</p>
+        </div>
+        <div class="grid grid-cols-4 gap-5" id="features">
+            <template v-for="item in items">
+                <div class="rounded border shadow-lg p-8">
+
+                    <div class="bg-green-50 rounded-full h-12 w-12 flex items-center justify-center">
+                        <p class="text-xl font-bold text-green-600">{{ item.id }}</p>
+                    </div>
+                    <p class="font-semibold mt-4 text-lg">
+                        {{ item.title }}
+                    </p>
+                    <p class="font-lg leading-relaxed text-normal my-2">
+                        {{ item.content }}
+                    </p>
+                    <a href="" class="flex items-center text-green-600 font-semibold">
+                        {{ item.action }}
+                        <svg class="h-3 w-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <section class="my-20">
+        <div class="flex flex-wrap justify-center mb-14">
+            <p class="text-4xl font-semibold">Bring value to voice</p>
+        </div>
+        <!-- untuckit -->
+        <div>
+            <div class="rounded bg-red-100 flex lg:mx-10 h-72 xl:h-96 xl:mx-32 xl"
+                style="background-image: url(./images/support-pattern.92da5f6.svg); background-repeat: no-repeat; background-position: -15% 30%; background-size: 500px;">
+                <div class="w-1/2">
+                    <img class="lg:mt-12" src="./images/aircall-provides-a-smoother-support-to-your-customers.png"
+                        alt="">
+                </div>
+                <div class="w-1/2 lg:mx-10 xl:px-20">
+                    <div class="lg:mt-16 xl:mt-24 w-full">
+                        <p class="lg:text-2xl font-semibold">
+                            For Smoother Support
+                        </p>
+                        <p class="lg:my-5 text-base font-normal text-gray-600">
+                            Make customer experience a competitive advantage with cloud call center IVR menus,
+                            skill-based routing, live call monitoring, and more.
+                        </p>
+                        <a href="" class="font-medium text-base text-yellow-600">
+                            Get the recipe for remarkable support ->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex w-full -mt-10">
+                <div class="flex flex-col w-full justify-center">
+                    <div class="w-full flex justify-center">
+                        <div class="flex bg-white shadow-xl rounded-3xl h-24 w-24">
+                            <img class="object-fill w-full h-auto object-center" src="./images/Untuckit.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="w-full flex justify-center my-5">
+                        <p class="w-3/5 xl:w-2/5 text-center text-xl font-normal">
+                            " Instead of digging through multiple systems trying to find clues, the right information
+                            is already there, helping us anticipate an issue before the customer even mentions it "
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <p class="w-3/5 text-center text-lg font-light">
+                            ⏤ Lauren Panken, Operating Systems Manager at UNTUCKit
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Socialbakers -->
+        <div class="mt-20">
+            <div class="bg-green-100 flex lg:mx-10 h-72 xl:h-96 xl:mx-32"
+                style="background-image: url(./images/sales-pattern.378a7b9.svg); background-repeat: no-repeat; background-position: -15% 30%; background-position: right; background-size: 500px;">
+                <div class="w-1/2 lg:mx-10 xl:px-20">
+                    <div class="lg:mt-16 xl:mt-24 w-full">
+                        <p class="lg:text-2xl font-semibold">
+                            For Smarter Sales
+                        </p>
+                        <p class="lg:my-5 text-base font-normal text-gray-600">
+                            Book more meetings and close deals quicker with PowerDialer, click-to-dial, real-time
+                            coaching, and more cloud capabilities.
+                        </p>
+                        <a href="" class="font-medium text-base text-yellow-600">
+                            See our secrets for sales productivity ->
+                        </a>
+                    </div>
+                </div>
+                <div class="w-1/2">
+                    <img class="mt-12" src="./images/aircall-app-increases-your-sales-reps-productivity.png" alt="">
+                </div>
+            </div>
+            <div class="flex w-full -mt-10">
+                <div class="flex flex-col w-full justify-center">
+                    <div class="w-full flex justify-center">
+                        <div class="flex bg-white shadow-xl rounded-3xl h-24 w-24">
+                            <img class="object-fill w-full h-auto object-center" src="./images/socialbakers-logo.png"
+                                alt="">
+                        </div>
+                    </div>
+
+                    <div class="w-full flex justify-center my-5">
+                        <p class="w-3/5 xl:w-2/5 text-center text-xl font-normal">
+                            " For a business development team, fast and easy dials are absolutely necessary. It
+                            directly impacts our velocity, and the volume of business we create and close. "
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <p class="w-3/5 text-center text-lg font-light">
+                            ⏤ Kateryna Keretsman, Head of BDR at Socialbakers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AIRTACKS -->
+        <div class="mt-20">
+            <div class="bg-purple-50 flex lg:mx-10 h-72 xl:h-96 xl:mx-32"
+                style="background-image: url(./images/business-pattern.4165720.svg); background-repeat: no-repeat; background-position: left; background-size: 500px;">
+
+                <div class="w-1/2">
+                    <img class="mt-16" src="./images/aircall-phone-is-integrated-to-all-your-business-tools.png"
+                        alt="">
+                </div>
+                <div class="w-1/2 lg:mx-10 xl:px-20">
+                    <div class="lg:mt-16 xl:mt-24 w-full">
+                        <p class="lg:text-2xl font-semibold">
+                            For Better Business
+                        </p>
+                        <p class="lg:my-5 text-base font-normal text-gray-600">
+                            Easily integrate with the cloud business tools each department relies on to get the job
+                            done and pave the way for more satisfying customer journeys.
+                        </p>
+                        <a href="" class="font-medium text-base text-yellow-600">
+                            Keep the whole company connected ->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex w-full -mt-10">
+                <div class="flex flex-col w-full justify-center">
+                    <div class="w-full flex justify-center">
+                        <div class="flex bg-white shadow-xl rounded-3xl h-24 w-24">
+                            <img class="object-fill w-full h-auto object-center" src="./images/airtreks-logo.png"
+                                alt="">
+                        </div>
+                    </div>
+
+                    <div class="w-full flex justify-center my-5">
+                        <p class="w-3/5 xl:w-2/5 text-center text-xl font-normal">
+                            " The setup and configuration of Aircall is a dream. It’s so easy to create new numbers,
+                            set up IVRs, and change people around to different teams if needed. "
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <p class="w-3/5 text-center text-lg font-light">
+                            ⏤ Sara Tiffany, General Manager at AirTreks
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quickstay -->
+        <div class="mt-20">
+            <div class="bg-blue-50 flex lg:mx-10 xl:mx-32"
+                style="background-image: url(./images/sales-patter.378a7b9.svg); background-repeat: no-repeat; background-position: -15% 30%; background-position: right; background-size: 500px;">
+                <div class="w-1/2 lg:mx-10 xl:px-20">
+                    <div class="lg:mt-16 xl:mt-24 w-full">
+                        <p class="lg:text-2xl font-semibold">
+                            For Remote Teams
+                        </p>
+                        <p class="lg:my-5 text-base font-normal text-gray-600">
+                            Get the cloud-based phone system that remote teams use to stay connected and seamlessly
+                            work from home or anywhere.
+                        </p>
+                        <a href="" class="font-medium text-base text-yellow-600">
+                            Learn More ->
+                        </a>
+                    </div>
+                </div>
+                <div class="w-1/2">
+                    <img class="object-fill object-bottom" src="./images/remote-visual_2x.png" alt="">
+                </div>
+            </div>
+            <div class="flex w-full -mt-10">
+                <div class="flex flex-col w-full justify-center">
+                    <div class="w-full flex justify-center">
+                        <div class="flex bg-white shadow-xl rounded-3xl h-24 w-24">
+                            <img class="object-fill w-full h-auto object-center" src="./images/quickstayy-logo.png"
+                                alt="">
+                        </div>
+                    </div>
+
+                    <div class="w-full flex justify-center my-5">
+                        <p class="w-3/5 xl:w-2/5 text-center text-xl font-normal">
+                            " We examined a bunch of providers and Aircall was the only one that allowed us the
+                            flexibility to customize our customer service needs based on our business practices. "
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <p class="w-3/5 text-center text-lg font-light">
+                            ⏤ Anton Zillberberg, CEO and Founder at QuickStay
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="h-1">
+    <section class="flex w-full my-20">
+        <div class="flex flex-col w-full justify-center">
+            <div class="w-full flex flex-col justify-center my-8">
+                <p class="text-center text-4xl font-semibold">
+                    Ready to build better conversations?
+                </p>
+                <p class="text-center text-xl font-light mt-5">
+                    Aircall runs on the device you're using right now.
+                </p>
+
+            </div>
+            <div class="w-full flex justify-center">
+                <button type="button"
+                    class="w-max bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-5 rounded">
+                    Schedule a demo
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 mt text-white"
+        style="background: url('./images/connected-bg.eef2984.jpg'); background-size: cover;">
+        <div class="flex w-full justify-center my-20">
+            <p class="text-4xl font-semibold">
+                Connected to the tools you love
+            </p>
+        </div>
+        <div class="lg:mx-10 xl:mx-32 grid lg:grid-cols-5 gap-4 gap-y-8" id="companies">
+            <template v-for="item in items" v-bind:key="item.name">
+                <div
+                    class="hover:bg-gray-900 hover:bg-opacity-20 rounded-lg w-full h-16 flex items-center justify-left pl-2">
+                    <div class="flex bg-white shadow-xl rounded-3xl h-12 w-12">
+                        <img class="object-fill w-full h-auto object-center" v-bind:src="item.photoURL"
+                            alt="{{ item.name }}">
+                    </div>
+                    <p class="ml-4 leading-none text-xl font-semibold">{{ item.name }}</p>
+                </div>
+            </template>
+        </div>
+        <div class="flex w-full justify-center my-10">
+            <button type="button"
+                class="border rounded border-gray-400 text-white font-semibold tracking-tight text-base py-1.5 px-4 bg-transparent hover:border-white">See
+                all integrations</button>
+        </div>
+    </section>
+    <section class="lg:mx-10 xl:mx-32 my-15 py-10">
+        <div class="flex w-full items-center">
+            <img src="https://aircall.io/_nuxt/img/aircall-icon-small.875f756.svg" class="mr-5" alt="">
+            <p class="text-xl font-semibold">
+                The phone system for modern business
+            </p>
+        </div>
+    </section>
+    <footer class="bg-gray-100 lg:px-10 xl:px-32">
+        <div class="flex flex-wrap w-full justify-between" id="footer-menu">
+            <template v-for="item in items" v-bind:key="item.title">
+                <div class="flex flex-col my-10">
+                    <p class="text-gray-700 font-semibold uppercase text-base mb-4">{{ item.title }}</p>
+                    <a v-for="subtitle in item.subtitles" href=""
+                        class="mb-2 text-base text-gray-600 hover:text-green-600">{{ subtitle }}</a>
+                </div>
+            </template>
+        </div>
+        <div class="flex flex-row justify-between items-center border-t-2 py-10">
+            <div class="flex flex-row" id="footer-link">
+                <template v-for="item in items">
+                    <a href="" class="text-gray-600 hover:text-green-400 mr-8 font-normal text-sm">{{ item.link }}</a>
+                </template>
+            </div>
+            <div class="flex flex-row">
+               <img class="ml-1" src="https://images.ctfassets.net/0kz5nrpxuzuo/5VEheZxjIoGJ0YeCEye4YN/1b6640b3f2531536f79cfebb5901e3b4/facebook.svg" alt="">
+               <img class="ml-1" src="https://images.ctfassets.net/0kz5nrpxuzuo/4SpWPbGnSBLp4jH8KaVPE3/6f3007e2045b3b3627ee76f0e7ff2f57/twitter.svg" alt="">
+               <img class="ml-1" src="https://images.ctfassets.net/0kz5nrpxuzuo/35O7ckdVVf3Tkniws8ItYR/fd3091b83774ed348a07c1257299b463/linkedin.svg" alt="">
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
