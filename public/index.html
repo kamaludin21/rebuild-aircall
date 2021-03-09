@@ -13,8 +13,6 @@
 
 </head>
 
-<!-- Fixed side mx from body -->
-
 <body>
     <div class="fixed z-10 w-full bg-white hidden lg:flex lg:px-5 xl:px-32 justify-between items-center border-b-2">
         <div class="">
@@ -240,14 +238,16 @@
                             Make customer experience a competitive advantage with cloud call center IVR menus,
                             skill-based routing, live call monitoring, and more.
                         </p>
-                        <a href="#" class="flex w-full items-center justify-center text-lg font-medium leading-6 text-yellow-600">
+                        <!-- Share this to tailwind component -->
+                        <button tipe="button"
+                            class="focus:outline-none lg:justify-start text-lg font-medium leading-6 text-purple-600">
                             Get the recipe for remarkable support
-                            <svg class="h-4 w-4 ml-1 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                        </a>
+                            <svg class="inline-block h-4 w-4 " xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -291,14 +291,15 @@
                             Book more meetings and close deals quicker with PowerDialer, click-to-dial, real-time
                             coaching, and more cloud capabilities.
                         </p>
-                        <a href="#" class="flex w-full items-center justify-center text-lg font-medium leading-6 text-green-600">
-                            See our secrets for sales productivity 
-                            <svg class="h-4 w-4 ml-1 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                        </a>
+                        <button tipe="button"
+                            class="focus:outline-none lg:justify-start text-lg font-medium leading-6 text-purple-600">
+                            See our secrets for sales productivity
+                            <svg class="inline-block h-4 w-4 " xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <div class="w-full p-6 lg:p-0 mt-4 hidden lg:flex">
@@ -348,14 +349,15 @@
                             Easily integrate with the cloud business tools each department relies on to get the job
                             done and pave the way for more satisfying customer journeys.
                         </p>
-                        <a href="#" class="flex w-full items-center justify-center text-lg font-medium leading-6 text-purple-600">
+                        <button tipe="button"
+                            class="focus:outline-none lg:justify-start text-lg font-medium leading-6 text-purple-600">
                             Keep the whole company connected
-                            <svg class="h-4 w-4 ml-1 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                        </a>
+                            <svg class="inline-block h-4 w-4 " xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -398,14 +400,15 @@
                             Get the cloud-based phone system that remote teams use to stay connected and seamlessly
                             work from home or anywhere.
                         </p>
-                        <a href="#" class="flex w-full items-center justify-center text-lg font-medium leading-6 text-blue-600">
+                        <button tipe="button"
+                            class="focus:outline-none lg:justify-start text-lg font-medium leading-6 text-purple-600">
                             Learn more
-                            <svg class="h-4 w-4 ml-1 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                        </a>
+                            <svg class="inline-block h-4 w-4 " xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <div class="w-full p-6 lg:p-0 mt-4 hidden lg:flex">
@@ -469,12 +472,14 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" id="companies">
             <template v-for="item in items" v-bind:key="item.name" v-bind:class='{ hidden: item==items.length-6 }'>
-                <div class="flex flex-col md:flex-row items-center justify-center md:justify-start hover:bg-gray-900 hover:bg-opacity-20 p-2 rounded-md" >
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center md:justify-start hover:bg-gray-900 hover:bg-opacity-20 p-2 rounded-md">
                     <div class="shadow-xl rounded-3xl h-12 w-12">
                         <img class="object-fill w-full h-auto object-center" v-bind:src="item.photoURL"
                             alt="{{ item.name }}">
                     </div>
-                    <p class="leading-none text-xl font-semibold text-center md:text-left mt-2 md:mt-0 md:ml-2">{{ item.name }}</p>
+                    <p class="leading-none text-xl font-semibold text-center md:text-left mt-2 md:mt-0 md:ml-2">
+                        {{ item.name }}</p>
                 </div>
             </template>
         </div>
@@ -502,16 +507,24 @@
                 </div>
             </template>
         </div>
-        <div class="flex flex-col md:flex-row justify-between items-center flex-wrap border-t-2 border-gray-300 pt-5 pb-10">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center flex-wrap border-t-2 border-gray-300 pt-5 pb-10">
             <div class="flex flex-col md:flex-row" id="footer-link">
                 <template v-for="item in items">
-                    <a href="" class="text-gray-600 hover:text-green-400 mr-8 font-normal text-sm py-0.5">{{ item.link }}</a>
+                    <a href=""
+                        class="text-gray-600 hover:text-green-400 mr-8 font-normal text-sm py-0.5">{{ item.link }}</a>
                 </template>
             </div>
             <div class="flex flex-row my-5">
-               <img class="mr-2" src="https://images.ctfassets.net/0kz5nrpxuzuo/5VEheZxjIoGJ0YeCEye4YN/1b6640b3f2531536f79cfebb5901e3b4/facebook.svg" alt="">
-               <img class="mr-2" src="https://images.ctfassets.net/0kz5nrpxuzuo/4SpWPbGnSBLp4jH8KaVPE3/6f3007e2045b3b3627ee76f0e7ff2f57/twitter.svg" alt="">
-               <img class="" src="https://images.ctfassets.net/0kz5nrpxuzuo/35O7ckdVVf3Tkniws8ItYR/fd3091b83774ed348a07c1257299b463/linkedin.svg" alt="">
+                <img class="mr-2"
+                    src="https://images.ctfassets.net/0kz5nrpxuzuo/5VEheZxjIoGJ0YeCEye4YN/1b6640b3f2531536f79cfebb5901e3b4/facebook.svg"
+                    alt="">
+                <img class="mr-2"
+                    src="https://images.ctfassets.net/0kz5nrpxuzuo/4SpWPbGnSBLp4jH8KaVPE3/6f3007e2045b3b3627ee76f0e7ff2f57/twitter.svg"
+                    alt="">
+                <img class=""
+                    src="https://images.ctfassets.net/0kz5nrpxuzuo/35O7ckdVVf3Tkniws8ItYR/fd3091b83774ed348a07c1257299b463/linkedin.svg"
+                    alt="">
             </div>
         </div>
     </footer>
