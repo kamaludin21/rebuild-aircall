@@ -4,5 +4,5 @@
 
 ## Preview
 
-Rebuild landing page of [aircall.io](https://aircall.io), with tailwindcss, 
+Trying to copy landing page design from [aircall.io](https://aircall.io), with tailwindcss and vuejs, 
 does not include fonts ([fellix](https://displaay.net/typeface/fellix/)) 

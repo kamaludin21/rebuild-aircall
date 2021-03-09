@@ -1,4 +1,4 @@
-// * Dropdown
+// * Dropdown desktop
 const dropdown = document.querySelector('#dropdown');
 const dropdown_menu = document.querySelector('#dropdown-menu');
 
@@ -12,10 +12,49 @@ dropdown.addEventListener('click', () => {
     }
 });
 
+// * Dropdown mobile
+const dropdownM = document.querySelector('#dropdownM');
+const dropdown_menuM = document.querySelector('#dropdown-menuM');
+
+dropdownM.addEventListener('click', () => {
+    if (dropdown_menuM.classList.contains('hidden')) {
+        dropdown_menuM.classList.remove('hidden');
+        dropdown_menuM.classList.add('absolute');
+    } else {
+        dropdown_menuM.classList.add('hidden');
+        dropdown_menuM.classList.remove('absolute');
+    }
+});
+
+// * Mobile menu
+const burgerButton = document.querySelector('#burger-menu');
+const mobileMenu = document.querySelector('#mobile-menu');
+
+burgerButton.addEventListener('click', () => {
+    if(mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+    } else {
+        mobileMenu.classList.add('hidden');
+    }
+});
+
 
 // Language
 var languages = new Vue({
     el: '#languages',
+    data: {
+        items: [
+        { language: 'Français' },
+        { language: 'English' },
+        { language: 'Deutsch' },
+        { language: 'Español' },
+        { language: 'Indonesia' }
+        ]
+    }
+});
+// Language
+var languages = new Vue({
+    el: '#languages-mobile',
     data: {
         items: [
         { language: 'Français' },
