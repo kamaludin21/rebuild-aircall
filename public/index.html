@@ -178,7 +178,7 @@
                         </span>
                     </button>
                     <div
-                        class="absolute -ml-0 lg:-ml-44 xl:-ml-64 md:w-max lg:w-2/5 nav-menu shadow-xl bg-white mt-2 mr-5">
+                        class="absolute hidden -ml-0 lg:-ml-44 xl:-ml-64 md:w-max lg:w-2/5 nav-menu shadow-xl bg-white mt-2 mr-5">
                         <div class="border flex flex-col">
                             <!-- Triangle  -->
                             <div class="flex w-full justify-start lg:justify-center ml-3 lg:ml-0 -mt-3">
@@ -705,9 +705,9 @@
             </p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" id="companies">
-            <template v-for="item in items" v-bind:key="item.name" v-bind:class='{ hidden: item==items.length-6 }'>
-                <div
-                    class="flex flex-col md:flex-row items-center justify-center md:justify-start hover:bg-gray-900 hover:bg-opacity-20 p-2 rounded-md">
+            <template v-for="item in items" v-bind:key="item.name"   >
+                <div  class="flex-col md:flex-row items-center justify-center md:justify-start hover:bg-gray-900 hover:bg-opacity-20 p-2 rounded-md" v-bind:class="[item.hiddenOn]">
+                    
                     <div class="shadow-xl rounded-3xl h-12 w-12">
                         <img class="object-fill w-full h-auto object-center" v-bind:src="item.photoURL"
                             alt="{{ item.name }}">
