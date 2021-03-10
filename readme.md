@@ -9,3 +9,11 @@ does not include fonts ([fellix](https://displaay.net/typeface/fellix/))
 
 ![logo](https://raw.githubusercontent.com/kamaludin21/rebuild-aircall/master/public/images/mockup.jpg
 )
+
+this is a screenshot of the original web when I was working on this project. this is a screenshot of the original web while I was working on this project, in case they update their website
+
+![logo](https://raw.githubusercontent.com/kamaludin21/rebuild-aircall/master/doc/screencapture-aircall-io-2021-02-22-13_08_51.png)
+
+## License
+
+All copyrights and licenses are fully owned by [aircall.io](https://aircall.io)
