@@ -10,7 +10,11 @@
     <title>Mobile First</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-
+    <style>
+        .nav:hover .nav-menu {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,7 +49,8 @@
                         </svg>
                     </span>
                 </button>
-                <div class="rounded right-20 w-32 mt-1 bg-white shadow-lg hidden" id="dropdown-menu">
+                <div class="bg-white rounded border shadow-lg md:right-5 xl:right-32 w-32 mt-1 hidden"
+                    id="dropdown-menu">
                     <div id="languages">
                         <template v-for="item in items">
                             <a
@@ -56,7 +61,7 @@
             </div>
         </div>
     </div>
-    <nav class="fixed w-full xl:mt-12 bg-white flex flex-col lg:flex-row px-5 md:px-10 lg:px-5 xl:px-32 py-4">
+    <nav class="fixed w-full lg:mt-12 bg-white flex flex-col lg:flex-row px-5 md:px-10 lg:px-5 xl:px-32 py-4">
         <div class="flex justify-between mb-2 sm:mb-0">
             <!-- brand -->
             <div class="lg:mr-12">
@@ -89,7 +94,7 @@
                             </svg>
                         </span>
                     </button>
-                    <div class="rounded border-2 xl:right-32 w-32 mt-1 bg-white shadow-lg hidden" id="dropdown-menuM">
+                    <div class="bg-white rounded border shadow-lg xl:right-32 w-32 mt-1 hidden" id="dropdown-menuM">
                         <div id="languages-mobile">
                             <template v-for="item in items">
                                 <a
@@ -100,39 +105,259 @@
                 </div>
             </div>
             <div class="flex flex-col lg:flex-row">
-                <a href="#" class="flex items-center font-semibold my-3 lg:mr-5">Why aircall
-                    <span class="ml-1 mt-1">
-                        <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </span>
-                </a>
-                <a href="#" class="flex items-center font-semibold my-3 lg:mr-5">Solutions
-                    <span class="ml-1 mt-1">
-                        <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </span>
-                </a>
-                <a href="#" class="flex items-center font-semibold my-3 lg:mr-5">Pricing</a>
-                <a href="#" class="flex items-center font-semibold my-3 lg:mr-5">Resources
-                    <span class="ml-1 mt-1">
-                        <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </span>
-                </a>
-                <a href="#" class="flex items-center font-semibold my-3 lg:mr-5">Partners
-                    <span class="ml-1 mt-1">
-                        <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </span>
-                </a>
+                <div class="nav">
+                    <button href="#" role="button"
+                        class="flex focus:outline-none items-center font-semibold hover:text-green-400 my-3 lg:mr-5">
+                        Why aircall
+                        <span class="ml-1 mt-1">
+                            <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="absolute hidden nav-menu w-max lg:-ml-20 xl:-ml-24 bg-white shadow-xl mt-2">
+                        <div class="border flex flex-col">
+                            <!-- Triangle  -->
+                            <div class="flex w-full justify-start lg:justify-center ml-3 lg:ml-0 -mt-3">
+                                <div class="bg-white border-l border-t transform rotate-45 border-collapse w-6 h-6">
+                                </div>
+                            </div>
+
+                            <!-- Menu link -->
+                            <div class="flex flex-col my-8">
+                                <a href=""
+                                    class="py-1 my-1 pl-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Features</a>
+                                <a href=""
+                                    class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Quality
+                                    and Reliability</a>
+                                <a href=""
+                                    class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Customer
+                                    Success Stories</a>
+                                <a class="py-1 my-1 px-8 text-green-600 text-base font-medium leading-5">
+                                    Try for free
+                                    <svg class="inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div
+                                class="flex flex-col flex-wrap w-full bg-gradient-to-r from-white to-green-100 py-5 pl-8">
+                                <p class="font-semibold text-base text-grey-800">
+                                    App Marketplace
+                                </p>
+                                <p class="text-sm break-words w-4/5 leading-tight my-3">
+                                    The leading app ecosystem for voice
+                                </p>
+                                <a class="py-1 my-1 text-green-600 text-base font-medium leading-5">
+                                    Explore the marketplace
+                                    <svg class="inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button href="#" role="button"
+                        class="flex focus:outline-none items-center font-semibold hover:text-green-400 my-3 lg:mr-5">
+                        Solutions
+                        <span class="ml-1 mt-1">
+                            <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div
+                        class="absolute hidden -ml-0 lg:-ml-44 xl:-ml-64 md:w-max lg:w-2/5 nav-menu shadow-xl bg-white mt-2 mr-5">
+                        <div class="border flex flex-col">
+                            <!-- Triangle  -->
+                            <div class="flex w-full justify-start lg:justify-center ml-3 lg:ml-0 -mt-3">
+                                <div class="bg-white border-l border-t transform rotate-45 border-collapse w-6 h-6">
+                                </div>
+                            </div>
+
+                            <div class="overflow-x-auto h-60 md:h-auto">
+                                <!-- Menu link -->
+                                <div class="flex flex-col md:flex-row flex-wrap ">
+                                    <div class="flex flex-col my-0 md:my-8 w-full md:w-2/6">
+                                        <p class="text-base py-1 my- pl-8 text-gray-500">BY USE CASE</p>
+                                        <a href=""
+                                            class="py-1 my-1 pl-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Call
+                                            Center</a>
+                                        <a href=""
+                                            class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Phone
+                                            System</a>
+                                        <a href=""
+                                            class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Remote</a>
+                                        <a class="py-1 my-1 px-8 text-green-600 text-base font-medium leading-5">
+                                            All use cases
+                                            <svg class="inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="flex flex-col my-0 md:my-8 w-full md:w-2/6 border-l">
+                                        <p class="text-base py-1 my-1 pl-8 text-gray-500">BY ROLE</p>
+                                        <a href=""
+                                            class="py-1 my-1 pl-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Sales</a>
+                                        <a href=""
+                                            class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">IT</a>
+                                        <a href=""
+                                            class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Support</a>
+                                    </div>
+                                    <div class="flex flex-col my-0 md:my-8 w-full md:w-2/6 border-l">
+                                        <p class="text-base py-1 my-1 pl-8 text-gray-500">BY BUSINESS</p>
+                                        <a href=""
+                                            class="py-1 my-1 pl-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Ecommerce</a>
+                                        <a href=""
+                                            class="py-1 my-1 px-7 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Non-profits</a>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Link -->
+                                <div
+                                    class="flex flex-col md:flex-row w-full items-center justify-between bg-gradient-to-r from-white to-green-100 py-5 pl-8 pr-8">
+                                    <div>
+                                        <p class="font-semibold text-base text-grey-800">
+                                            Book an Aircall demo today!
+                                        </p>
+                                        <p class="text-sm break-words w-4/5 leading-tight my-3">
+                                            Discover & access advanced features
+                                        </p>
+                                    </div>
+                                    <a class="py-1 my-1 text-green-600 text-base font-medium leading-5">
+                                        Get a live demo
+                                        <svg class="inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="flex items-center font-semibold my-2 lg:mr-5">Pricing</a>
+                <div class="nav">
+                    <button href="#" role="button"
+                        class="flex focus:outline-none items-center font-semibold hover:text-green-400 my-3 lg:mr-5">
+                        Resources
+                        <span class="ml-1 mt-1">
+                            <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="absolute hidden lg:-ml-44 xl:-ml-48 w-max nav-menu shadow-xl bg-white mt-2">
+                        <div class="border flex flex-col">
+                            <!-- Triangle  -->
+                            <div class="flex w-full justify-start lg:justify-center ml-3 lg:ml-0 -mt-3">
+                                <div class="bg-white lg:bg-green-50 border-l border-t transform rotate-45 border-collapse w-6 h-6">
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:flex-row w-full">
+                                <div class="flex flex-col w-max mb-5 lg:my-12">
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Onboarding
+                                        Portal</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Guides</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Knowledge Base</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Help Center</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">API Documentation</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">VoIP Documentation</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Glossary</a>
+                                </div>
+                                <div
+                                    class="hidden lg:flex flex-col flex-wrap w-3/5 bg-gradient-to-r from-green-50 to-green-100 pt-16 z-10 -mt-3">
+                                    <p class="ml-5 font-semibold text-base text-grey-800">
+                                        Download
+                                    </p>
+                                    <p class="ml-5 text-sm break-words w-4/5 leading-tight my-3">
+                                        Get Aircall for desktop and mobile
+                                    </p>
+                                    <a class="ml-5 py-1 my-1 text-green-600 text-base font-medium leading-5">
+                                        Download links
+                                        <svg class="inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <button href="#" role="button"
+                        class="flex focus:outline-none items-center font-semibold hover:text-green-400 my-3 lg:mr-5">
+                        Partners
+                        <span class="ml-1 mt-1">
+                            <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="absolute hidden lg:-ml-44 xl:-ml-48 w-max nav-menu shadow-xl bg-white mt-2">
+                        <div class="border flex flex-col">
+                            <!-- Triangle  -->
+                            <div class="flex w-full justify-start lg:justify-center ml-3 lg:ml-0 -mt-3">
+                                <div class="bg-white lg:bg-green-50 border-l border-t transform rotate-45 border-collapse w-6 h-6">
+                                </div>
+                            </div>
+                            <div class="flex w-full">
+                                <div class="flex flex-col w-max mb-5 lg:my-12">
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Integrations Partners</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Channel Partners</a>
+                                    <a href=""
+                                        class="px-5 py-2 hover:bg-green-100 hover:text-green-600 border-l-4 border-transparent hover:border-green-400 text-base font-medium leading-5">Partners Stories</a>
+                                </div>
+                                <div
+                                    class="hidden lg:flex flex-col flex-wrap w-3/5 bg-gradient-to-r from-green-50 to-green-100 pt-16 z-10 -mt-3">
+                                    <p class="ml-5 font-semibold text-base text-grey-800">
+                                        Developers
+                                    </p>
+                                    <p class="ml-5 text-sm break-words w-4/5 leading-tight my-3">
+                                        Let’s build the future of voice, together
+                                    </p>
+                                    <a class="ml-5 py-1 my-1 text-green-600 text-base font-medium leading-5">
+                                        Learn more
+                                        <svg class="inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <a href="#" class="flex items-center font-semibold my-3 lg:mr-5">Company
                     <span class="ml-1 mt-1">
                         <svg class="w-2 h-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
